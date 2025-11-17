@@ -39,16 +39,16 @@ const person2 = new Person("Alice", 25);
 interface Item {
   title: string;
   rating: number;
-}
+ }
 function filterByRating(items: Item[]): Item[] {
   return items.filter((item) => item.rating >= 4);
-}
+ }
 const books: Item[] = [
   { title: "Book A", rating: 4.5 },
   { title: "Book B", rating: 3.2 },
   { title: "Book C", rating: 5.0 },
   { title: "Book D", rating: 4.9 },
-];
+ ];
 const highRatedProducts = filterByRating(books);
 
 
