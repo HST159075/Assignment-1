@@ -98,3 +98,34 @@ const myBook: Book = {
   publishedYear: 1925,
   isAvailable: true,
 };
+
+
+
+function getUniqueValues(arr1: (number | string)[], arr2: (number | string)[]): (number | string)[] {
+    const combined: (number | string)[] = [];
+    const result: (number | string)[] = [];
+  
+    for (let i = 0; i < arr1.length; i++) {
+        combined[combined.length] = arr1[i];
+    }
+    for (let i = 0; i < arr2.length; i++) {
+        combined[combined.length] = arr2[i];
+    }
+    for (let i = 0; i < combined.length; i++) {
+        let isDuplicate = false;
+        for (let j = 0; j < result.length; j++) {
+            if (combined[i] === result[j]) {
+                isDuplicate = true;
+                break;
+            }
+        }
+        if (!isDuplicate) {
+            result[result.length] = combined[i];
+        }
+    }
+    return result;
+} 
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
+
+
