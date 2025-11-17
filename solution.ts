@@ -14,6 +14,7 @@ function formatValue(
 }
 
 
+
 function getLength(value: string | any[]): number {
   if (typeof value === "string") {
     return value.length;
@@ -25,6 +26,7 @@ function getLength(value: string | any[]): number {
 }
 
 
+
 class Person {
     name: string;
     age: number;
@@ -33,12 +35,11 @@ class Person {
         this.age = age;
     }
     getDetails(): string {
-        return `'Name: ${this.name},Age: ${this.age}'`
+        return `'Name: ${this.name}, Age: ${this.age}'`;
     }
- }
+}
 const person1 = new Person('John Doe', 30);
 const person2 = new Person('Alice', 25);
-
 
 
 
@@ -46,17 +47,18 @@ const person2 = new Person('Alice', 25);
 interface Item {
   title: string;
   rating: number;
- }
+}
 function filterByRating(items: Item[]): Item[] {
   return items.filter((item) => item.rating >= 4);
- }
+}
 const books: Item[] = [
   { title: "Book A", rating: 4.5 },
   { title: "Book B", rating: 3.2 },
   { title: "Book C", rating: 5.0 },
   { title: "Book D", rating: 4.9 },
- ];
+];
 const highRatedProducts = filterByRating(books);
+
 
 
 
@@ -78,19 +80,20 @@ const users = [
 
 
 
+
 interface Book {
   title: string;
   author: string;
   publishedYear: number;
   isAvailable: boolean;
- }
+}
 function printBookDetails(book: Book): void {
   const availability = book.isAvailable ? "Yes" : "No";
 
   console.log(
     `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`
   );
- }
+}
 const myBook: Book = {
   title: "The Great Gatsby",
   author: "F. Scott Fitzgerald",
@@ -123,10 +126,9 @@ function getUniqueValues(arr1: (number | string)[], arr2: (number | string)[]): 
         }
     }
     return result;
-} 
+}
 const array1 = [1, 2, 3, 4, 5];
 const array2 = [3, 4, 5, 6, 7];
-
 
 
 
@@ -135,16 +137,20 @@ interface Product {
     price: number;
     quantity: number;
     discount?: number; 
- }
-  function calculateTotalPrice(products: Product[]): number {
-    if (products.length === 0) return 0;
-      return products
-        .map(product => {
-            const discountMultiplier = product.discount ? (100 - product.discount) / 100 : 1;
-            return product.price * product.quantity * discountMultiplier;
-         })
-         .reduce((total, current) => total + current, 0);
- }
+}
+function calculateTotalPrice(products: Product[]): number {
+  if (products.length === 0) return 0;
+
+  return products
+    .map(product => {
+        const discountMultiplier = product.discount
+          ? (100 - product.discount) / 100
+          : 1;
+
+        return product.price * product.quantity * discountMultiplier;
+    })
+    .reduce((total, current) => total + current, 0);
+}
 const products: Product[] = [
   { name: 'Pen', price: 10, quantity: 2 },
   { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
