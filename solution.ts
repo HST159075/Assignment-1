@@ -1,0 +1,70 @@
+function formatValue(
+  value: string | number | boolean
+ ): string | number | boolean {
+  if (typeof value === "string") {
+    return value.toUpperCase();
+  }
+  if (typeof value === "number") {
+    return value * 10;
+  }
+  if (typeof value === "boolean") {
+    return !value;
+  }
+  return value;
+}
+
+
+function getLength(value: string | any[]): number {
+  if (typeof value === "string") {
+    return value.length;
+  }
+  if (Array.isArray(value)) {
+    return value.length;
+  }
+  return value;
+}
+
+
+class Person {
+    constructor(public Name: string, public Age: number) { }
+    getDetails(): string {
+        return `Name: ${this.Name} , Age: ${this.Age}`;
+    }
+}
+const person1 = new Person("John Doe", 30);
+const person2 = new Person("Alice", 25);
+
+
+
+interface Item {
+  title: string;
+  rating: number;
+}
+function filterByRating(items: Item[]): Item[] {
+  return items.filter((item) => item.rating >= 4);
+}
+const books: Item[] = [
+  { title: "Book A", rating: 4.5 },
+  { title: "Book B", rating: 3.2 },
+  { title: "Book C", rating: 5.0 },
+  { title: "Book D", rating: 4.9 },
+];
+const highRatedProducts = filterByRating(books);
+
+
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+};
+function filterActiveUsers(users: User[]): User[] {
+  return users.filter(user => user.isActive === true);
+}
+const users = [
+  { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
+  { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
+  { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
+  { id: 4, name: 'Sajid', email: 'sajid@example.com', isActive: false },
+];
