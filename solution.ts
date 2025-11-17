@@ -32,11 +32,10 @@ class Person {
         this.name = name;
         this.age = age;
     }
-
     getDetails(): string {
         return `'Name: ${this.name},Age: ${this.age}'`
     }
-}
+ }
 const person1 = new Person('John Doe', 30);
 const person2 = new Person('Alice', 25);
 
